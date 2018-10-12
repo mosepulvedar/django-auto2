@@ -22,4 +22,5 @@ admin.site.site_header = "Administracion automotora"
 urlpatterns = [
     path('', include('core.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

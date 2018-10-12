@@ -1,0 +1,32 @@
+
+{% extends "core/base.html" %}
+
+{% block contenido %}
+
+<h1>Listado de automoviles</h1>
+
+<table>
+
+    <tr>
+        <th>Patente</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+    </tr>
+
+    {% for a in autos %}
+    
+        <tr>
+            <td>{{ a.patente }}</td>
+            <td>{{ a.marca.nombre }}</td>
+            <td>{{ a.modelo }}</td>
+            <td>{{ a.anio }}</td>
+        </tr>
+
+    {% endfor %}
+
+</table>
+
+
+
+{% endblock contenido %}

@@ -18,6 +18,11 @@ class Automovil(models.Model):
     class Meta:
         verbose_name = "Automovil"
         verbose_name_plural = "Automoviles"
+        permissions = (
+            ("auto_can_add", "puede agregar autos"),
+            ("auto_can_delete", "puede eliminar autos"),
+            ("auto_can_modify", "puede modifica autos"),
+        )
     
     def __str__(self):
         return self.patente

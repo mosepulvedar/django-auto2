@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .models import Automovil, Marca
+from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
 
+@login_required
 def home(request):
     return render(request, 'core/home.html')
 
@@ -19,6 +21,7 @@ def listar_automovil(request):
     })
 
 
+@permission_required('core.auto_can_add')
 def formulario_automovil(request):
 
     marcas = Marca.objects.all()
